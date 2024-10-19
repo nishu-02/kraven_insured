@@ -1,0 +1,173 @@
+/* Body Styling with Animated Gradient */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(315deg, #ffafbd, #ffc3a0, #ff512f, #dd2476);
+  animation: background-gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes background-gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+/* Connect Wallet Container */
+.connect-wallet-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px;
+  position: relative;
+  animation: fadeIn 1s ease forwards;
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Animated Wallet Icon */
+.wallet-icon {
+  margin-bottom: 20px;
+}
+
+.wallet-icon img {
+  width: 80px;
+  height: 80px;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Connect Button */
+.connect-button {
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #ffafbd, #ffc3a0);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.connect-button:hover {
+  background: linear-gradient(90deg, #ffc3a0, #ffafbd);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Disconnect Button */
+.disconnect-button {
+  padding: 12px 24px;
+  background-color: #ff512f;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.disconnect-button:hover {
+  background-color: #dd2476;
+  transform: scale(1.05);
+}
+
+/* Wallet Info Text */
+.wallet-info p {
+  font-size: 1.1rem;
+  color: white;
+  margin: 10px 0;
+}
+
+/* Loading Spinner for Connect Wallet */
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #61dafb;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+  margin-top: 10px;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #61dafb;
+  animation: loading 3s infinite;
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+/* Success Animation */
+.success-animation {
+  font-size: 2rem;
+  color: #28a745;
+  margin-top: 20px;
+  animation: popIn 0.5s ease-out forwards;
+}
+
+@keyframes popIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.5);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}

@@ -1,0 +1,118 @@
+/* Reset styles for Dashboard */
+.dashboard-wrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling on the body */
+}
+
+#root {
+    height: 100%;
+}
+
+.Headingg {
+    text-align: center;
+    padding-top: 10px; /* Adjust to move closer to the top */
+    font-size: 36px;
+    font-weight: bold;
+    color: #185b5e;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #264778;
+    /* color: #b33737; */
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Gradient background */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Sidebar CSS */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    background-color: aqua;
+    position: fixed; /* Fix the sidebar in place */
+    top: 0;
+    left: 0;
+}
+
+/* Dashboard content CSS */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px 50px;
+    margin-left: 250px; /* Add margin to ensure content starts after the sidebar */
+    overflow-y: auto;
+    background-color: #f0f2f5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.warranty-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+    background-color: #e1f4d7;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.card.expanded .card-content {
+    max-height: 600px;
+}
+
+.card p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
